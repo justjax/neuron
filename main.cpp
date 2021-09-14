@@ -40,6 +40,9 @@ Eigen::MatrixXi class_to_output(Eigen::MatrixXi class_vec)
 
 int main(int argc, char** argv)
 {
+    (void) argc;
+    (void) argv;
+
     Eigen::MatrixXi mat(4,3);
     mat << 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0;
     cout << mat << endl;
@@ -52,6 +55,9 @@ int main(int argc, char** argv)
     cout << "-------" << endl;
     cout << output << endl;
 
-    DatasetParser parser("/home/justjack/workspace/NeuralNetwork/Neuron/data/iris_training.dat");
-    parser.loadFile();
+    DatasetParser parser("/home/justjack/workspace/neuron/data/iris_training.dat");
+    Dataset data = parser.parseFile();
+
+    cout << data.m_inputs << endl;
+    cout << data.m_outputs << endl;
 }

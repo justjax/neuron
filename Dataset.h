@@ -3,6 +3,7 @@
 
 #include <eigen3/Eigen/Dense>
 
+using Eigen::MatrixXf;
 using Eigen::MatrixXi;
 
 class Dataset
@@ -11,12 +12,11 @@ public:
     Dataset() = default;
     ~Dataset() = default;
 
-private:
-    MatrixXi m_inputs;
+    MatrixXf m_inputs;
     MatrixXi m_outputs;
     MatrixXi m_classes;
     int m_count;
-    MatrixXi m_bias;
+    MatrixXf m_bias;
 };
 
 class Datasets
